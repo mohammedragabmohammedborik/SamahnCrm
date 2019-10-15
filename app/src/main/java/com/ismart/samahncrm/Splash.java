@@ -2,17 +2,16 @@ package com.ismart.samahncrm;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.ismart.samahncrm.home.HomeActivity;
+import com.ismart.samahncrm.crmhome.CrmHoneActivity;
+import com.ismart.samahncrm.login.LoginActivity;
 
 public class Splash extends AppCompatActivity {
 
@@ -116,7 +115,7 @@ public class Splash extends AppCompatActivity {
 //
 //                else {
 
-                    startActivity(new Intent(Splash.this, HomeActivity.class));
+                    startActivity(new Intent(Splash.this, LoginActivity.class));
 
 
              //   }

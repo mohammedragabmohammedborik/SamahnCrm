@@ -22,4 +22,7 @@
     <color name="activerate">#826040</color>
     <color name="text_colorD">#1d1d1d</color>
 
+    <color name="blue_color">#393fe9</color>
+    <color name="bg_sp_color">#f6f6f6</color>
+
 </resources>

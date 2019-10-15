@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">سمحان عقار</string>
     <string name="login">تسجيل الدخول</string>
+    <string name="task">المهام</string>
+    <string name="fill_mobile">must fill your mobile</string>
 </resources>

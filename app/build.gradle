@@ -18,7 +18,6 @@ android {
         }
     }
 
-
     dataBinding.enabled = true
 
     compileOptions {
@@ -98,13 +97,8 @@ dependencies {
     // optional - RxJava support for Room
     implementation 'androidx.room:room-rxjava2:2.1.0-alpha04'
 
-
     //lottie animation
     implementation 'com.airbnb.android:lottie:2.5.0'
-
-
     //html textview
     implementation 'org.sufficientlysecure:html-textview:3.6'
-
-
 }

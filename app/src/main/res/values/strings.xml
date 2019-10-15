@@ -10,6 +10,10 @@
     <string name="task_details">Task Details</string>
     <string name="task_status">Task Status</string>
     <string name="show_task">Show Task</string>
+    <string name="task">المهام</string>
+    <string name="my_account">حسابي</string>
+    <string name="developed_by">Developed By</string>
+    <string name="fill_field">must fill this field</string>
 
 
 </resources>
