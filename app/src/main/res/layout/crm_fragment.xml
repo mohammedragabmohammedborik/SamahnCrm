@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true"
+    android:clipChildren="true"
     android:layout_height="match_parent">
     <FrameLayout
         android:layout_width="match_parent"
@@ -43,9 +46,96 @@
     <com.ismart.samahncrm.CustomCalnderView
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:id="@+id/custom_clander"
        />
+    <HorizontalScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="true"
+
+        android:scrollbars="horizontal">
+
+    <LinearLayout
+        android:id="@+id/linear_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:descendantFocusability="blocksDescendants"
+        android:layout_marginEnd="@dimen/dimen16"
+        android:layout_marginStart="@dimen/dimen16"
+    >
+        <Button
+            android:id="@+id/waiting"
+            android:layout_width="wrap_content"
+            android:text="@string/waiting"
+            android:background="@drawable/waitng_bg"
+            android:fontFamily="@font/cairo_regular"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="@dimen/dimen24"
+            android:textSize="12sp"
+
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:text="@string/accept"
+            android:background="@drawable/accept_bg"
+            android:fontFamily="@font/cairo_regular"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+
+
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/working"
+            android:layout_width="wrap_content"
+            android:text="@string/working"
+            android:background="@drawable/working_bg"
+            android:fontFamily="@font/cairo_regular"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+
+
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/waiting_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/waiting_review_bg"
+            android:fontFamily="@font/cairo_regular"
+            android:text="@string/waiting_review"
+            android:layout_gravity="center"
+            android:paddingEnd="@dimen/dimen8"
+            android:paddingStart="@dimen/dimen8"
+
+
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/finish"
+            android:layout_width="wrap_content"
+            android:text="@string/finish"
+            android:textSize="12sp"
+            android:background="@drawable/finish_bg"
+            android:fontFamily="@font/cairo_regular"
+            android:layout_marginEnd="16dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </HorizontalScrollView>
+    <fragment
+        android:layout_below="@+id/toolbar2"
+        android:id="@+id/fragment2_second"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/second_crm_navigation" />
+
+
 
 
 </LinearLayout>

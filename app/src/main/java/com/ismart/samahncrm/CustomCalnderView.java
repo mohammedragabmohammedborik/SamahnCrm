@@ -2,10 +2,12 @@ package com.ismart.samahncrm;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -96,11 +98,17 @@ public class CustomCalnderView extends LinearLayout {
         // move calendar backwards to the beginning of the week
         calendar.add(Calendar.DAY_OF_MONTH, -monthBeginningCell);
 
+        Log.w("TAG", "updateCalendar: 1 "+Calendar.DAY_OF_MONTH+" ... 2..."+-monthBeginningCell);
+
         // fill cells
         while (cells.size() < DAYS_COUNT)
         {
             cells.add(calendar.getTime());
+            Log.w("TAG", "updateCalendar: Time "+calendar.getTime());
+
             calendar.add(Calendar.DAY_OF_MONTH, 1);
+            Log.w("TAG", "updateCalendar: Month "+Calendar.DAY_OF_MONTH);
+
         }
 
         // update grid
@@ -109,8 +117,9 @@ public class CustomCalnderView extends LinearLayout {
         // update title
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE,d MMM,yyyy");
         String[] dateToday = sdf.format(currentDate.getTime()).split(",");
+        Log.w("TAG", "updateCalendar: ... .. "+ currentDate.getTime());
         txtDateDay.setText(dateToday[0]);
-        txtDisplayDate.setText(dateToday[1]);
+        txtDisplayDate.setText(dateToday[1]+dateToday[2]);
         //txtDateYear.setText(dateToday[2]);
 
     }

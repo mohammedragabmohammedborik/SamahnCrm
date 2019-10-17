@@ -25,4 +25,24 @@
     <color name="blue_color">#393fe9</color>
     <color name="bg_sp_color">#f6f6f6</color>
 
+    <color name="wait_first_color">#43e97b</color>
+    <color name="wait_end_color">#38f9d7</color>
+
+    <color name="accept_first_color">#ff5858</color>
+    <color name="accept_end_color">#fb5895</color>
+
+    <color name="working_first_color">#667eea</color>
+    <color name="working_end_color">#64b6ff</color>
+
+    <color name="waitng_review_first_color">#f9f104</color>
+    <color name="waitng_review_end_color">#c5b910</color>
+    <color name="finish_first_color">#ea7d66</color>
+    <color name="finish_end_color">#ffb764</color>
+    <color name="color_time_card_view">#f6f6f6</color>
+    <color name="text_color_bd">#2b454e
+    </color>
+
+
+
+
 </resources>

@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.ismart.samahncrm.R;
 import com.ismart.samahncrm.databinding.CrmFragmentBinding;
@@ -22,6 +24,8 @@ import java.util.HashSet;
 
 public class CrmHomeFragment extends Fragment {
    private CrmFragmentBinding crmFragmentBinding;
+    private NavController navController;
+
 
     @Override
     public void onAttach(Context context) {
@@ -36,6 +40,8 @@ public class CrmHomeFragment extends Fragment {
         crmFragmentBinding= DataBindingUtil.inflate(
                 inflater, R.layout.crm_fragment, container, false);
         View view = crmFragmentBinding.getRoot();
+        navController = Navigation.findNavController(getActivity(), R.id.fragment2_second);
+
         return view;
     }
 
@@ -46,9 +52,14 @@ public class CrmHomeFragment extends Fragment {
         HashSet<Date> events = new HashSet<>();
         events.add(new Date());
 
-     //   CalendarView cv = ((CalendarView)findViewById(R.id.calendar_view));
+
+        //   CalendarView cv = ((CalendarView)findViewById(R.id.calendar_view));
       crmFragmentBinding.customClander.updateCalendar(events);
        // crmFragmentBinding.customClander.setEventHandler
+       // crmFragmentBinding.scrollView.setHorizontalScrollBarEnabled(false);
+      //  crmFragmentBinding.scrollView.computeScroll();
+      //  crmFragmentBinding.scrollView.fullScroll(0);
+
 
     }
 

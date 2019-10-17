@@ -14,6 +14,11 @@
     <string name="my_account">حسابي</string>
     <string name="developed_by">Developed By</string>
     <string name="fill_field">must fill this field</string>
+    <string name="waiting_review">Waiting Review</string>
+    <string name="working">Working</string>
+    <string name="accept">Accept</string>
+    <string name="waiting">Waiting</string>
+    <string name="finish">Finish</string>
 
 
 </resources>
