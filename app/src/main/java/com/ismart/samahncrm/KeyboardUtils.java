@@ -145,37 +145,37 @@ public final class KeyboardUtils {
 
     /**
      * Fix the leaks of soft input.
-     * <p>Call the function in {@link Activity#onDestroy()}.</p>
+    //// * <p>Call the function in {@link Activity#onDestroy()}.</p>
      *
      * @param context The context.
      */
-    public static void fixSoftInputLeaks(final Context context) {
-        if (context == null) return;
-        InputMethodManager imm =
-                (InputMethodManager) ApplicationConfiguration.getAppContext()
-                        .getSystemService(Context.INPUT_METHOD_SERVICE);
-        if (imm == null) return;
-        String[] strArr = new String[]{"mCurRootView", "mServedView", "mNextServedView"};
-        for (int i = 0; i < 3; i++) {
-            try {
-                Field declaredField = imm.getClass().getDeclaredField(strArr[i]);
-                if (declaredField == null) continue;
-                if (!declaredField.isAccessible()) {
-                    declaredField.setAccessible(true);
-                }
-                Object obj = declaredField.get(imm);
-                if (obj == null || !(obj instanceof View)) continue;
-                View view = (View) obj;
-                if (view.getContext() == context) {
-                    declaredField.set(imm, null);
-                } else {
-                    return;
-                }
-            } catch (Throwable th) {
-                th.printStackTrace();
-            }
-        }
-    }
+//    public static void fixSoftInputLeaks(final Context context) {
+//        if (context == null) return;
+//        InputMethodManager imm =
+//                (InputMethodManager) ApplicationConfiguration.getAppContext()
+//                        .getSystemService(Context.INPUT_METHOD_SERVICE);
+//        if (imm == null) return;
+//        String[] strArr = new String[]{"mCurRootView", "mServedView", "mNextServedView"};
+//        for (int i = 0; i < 3; i++) {
+//            try {
+//                Field declaredField = imm.getClass().getDeclaredField(strArr[i]);
+//                if (declaredField == null) continue;
+//                if (!declaredField.isAccessible()) {
+//                    declaredField.setAccessible(true);
+//                }
+//                Object obj = declaredField.get(imm);
+//                if (obj == null || !(obj instanceof View)) continue;
+//                View view = (View) obj;
+//                if (view.getContext() == context) {
+//                    declaredField.set(imm, null);
+//                } else {
+//                    return;
+//                }
+//            } catch (Throwable th) {
+//                th.printStackTrace();
+//            }
+//        }
+//    }
 
     /**
      * Click blankj area to hide soft input.

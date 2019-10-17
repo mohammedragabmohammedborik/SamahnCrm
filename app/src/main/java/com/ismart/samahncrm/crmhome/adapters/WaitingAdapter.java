@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide;
 import com.ismart.samahncrm.crmhome.interfacecomm.OnItemClickListener;
 import com.ismart.samahncrm.crmhome.interfacecomm.TaskStatus;
 import com.ismart.samahncrm.crmhome.models.WaitingModuleAdapter;
+import com.ismart.samahncrm.databinding.ItemMyTaskWaitingBinding;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class WaitingAdapter extends RecyclerView.Adapter<WaitingAdapter.MyAdvVie
             inflater = LayoutInflater.from(parent.getContext());
 
         }
-        return  new WaitingAdapter.MyAdvViewHolder(ItemAdvertiseBinding.inflate(inflater,parent,false));
+        return  new WaitingAdapter.MyAdvViewHolder(ItemMyTaskWaitingBinding.inflate(inflater,parent,false));
 
     }
 
@@ -76,9 +78,9 @@ public class WaitingAdapter extends RecyclerView.Adapter<WaitingAdapter.MyAdvVie
 
 
     class MyAdvViewHolder extends RecyclerView.ViewHolder{
-        private ItemAdvertiseBinding itemAdvertiseBinding;
+        private ItemMyTaskWaitingBinding itemAdvertiseBinding;
 
-        public MyAdvViewHolder(@NonNull ItemAdvertiseBinding itemView) {
+        public MyAdvViewHolder(@NonNull ItemMyTaskWaitingBinding itemView) {
             super(itemView.getRoot());
             this.itemAdvertiseBinding=itemView;
 
