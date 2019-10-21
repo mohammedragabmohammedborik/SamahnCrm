@@ -12,8 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.ismart.samahncrm.R;
 import com.ismart.samahncrm.databinding.CrmFragmentBinding;
@@ -22,9 +24,11 @@ import java.util.Date;
 import java.util.HashSet;
 
 
+
 public class CrmHomeFragment extends Fragment {
    private CrmFragmentBinding crmFragmentBinding;
     private NavController navController;
+    FragmentManager fragmentManager;
 
 
     @Override
@@ -40,7 +44,15 @@ public class CrmHomeFragment extends Fragment {
         crmFragmentBinding= DataBindingUtil.inflate(
                 inflater, R.layout.crm_fragment, container, false);
         View view = crmFragmentBinding.getRoot();
-        navController = Navigation.findNavController(getActivity(), R.id.fragment2_second);
+//        navController = Navigation.findNavController(getActivity(), R.id.fragment2_second);
+        fragmentManager = getActivity().getSupportFragmentManager();
+        Fragment waitFragment = new WaitingFragment();
+        if (savedInstanceState == null) {
+            fragmentManager.beginTransaction().replace(R.id.fragment2_second2, waitFragment,"SL").commit();
+
+        }
+
+        // NavHostFragment.findNavController(R.id.fragment2_second)
 
         return view;
     }

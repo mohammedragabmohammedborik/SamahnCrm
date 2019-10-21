@@ -8,4 +8,6 @@
     <string name="working">Working</string>
     <string name="waiting">Waiting</string>
     <string name="finish">Finish</string>
+    <string name="minutes">Minutes</string>
+    <string name="task_title">Task Title</string>
 </resources>

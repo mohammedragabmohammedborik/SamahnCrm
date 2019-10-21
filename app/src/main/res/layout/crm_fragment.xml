@@ -126,14 +126,13 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
     </HorizontalScrollView>
-    <fragment
+    <FrameLayout
         android:layout_below="@+id/toolbar2"
-        android:id="@+id/fragment2_second"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:id="@+id/fragment2_second2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/second_crm_navigation" />
+
+      />
 
 
 

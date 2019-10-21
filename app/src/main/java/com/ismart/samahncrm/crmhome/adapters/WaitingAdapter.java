@@ -9,6 +9,8 @@ import androidx.databinding.BindingAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.ismart.samahncrm.R;
+import com.ismart.samahncrm.UtilityHelper;
 import com.ismart.samahncrm.crmhome.interfacecomm.OnItemClickListener;
 import com.ismart.samahncrm.crmhome.interfacecomm.TaskStatus;
 import com.ismart.samahncrm.crmhome.models.WaitingModuleAdapter;
@@ -44,23 +46,22 @@ public class WaitingAdapter extends RecyclerView.Adapter<WaitingAdapter.MyAdvVie
     public static void setModelImage(ImageView modelImage, String imageUrl) {
         Glide.with(modelImage)
                 .load(UtilityHelper.URLSERVER+imageUrl)
-                .centerCrop()
-                .placeholder(R.drawable.empty_user)
+                .placeholder(R.drawable.ic_item_flage)
                 .into(modelImage);
     }
 
-    public void setModelsList(List<ModuleShowAqarDetails.ModuleShowAqarData> moduleClassList) {
+    public void setModelsList(List<WaitingModuleAdapter> moduleClassList) {
          this.moduleClassList = moduleClassList;
         notifyDataSetChanged();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdvertisteAdapter.MyAdvViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyAdvViewHolder holder, int position) {
 
 
         holder.setModuleClassList(moduleClassList.get(position));
-        holder.setOitemClicked(onItemClickedListener);
-        holder.setOnItemClicked(onItemClickedListener1);
+        holder.setOnButtonClicked(onButtonClickListener);
+        holder.setOnItemClicked(onItemClickedListener);
 
 
 
@@ -86,20 +87,20 @@ public class WaitingAdapter extends RecyclerView.Adapter<WaitingAdapter.MyAdvVie
 
         }
 
-        void  setModuleClassList(ModuleShowAqarDetails.ModuleShowAqarData advertiseModuleClass){
-            this.itemAdvertiseBinding.setShowaqar(advertiseModuleClass);
+        void  setModuleClassList(WaitingModuleAdapter advertiseModuleClass){
+            this.itemAdvertiseBinding.setWaitingModel(advertiseModuleClass);
 
         }
 
 
-        public  void setOitemClicked(MyadvertiseCallback oitemClicked){
-            this.itemAdvertiseBinding.setOnclickedItem(oitemClicked);
+        public  void setOnButtonClicked(TaskStatus oitemClicked){
+            this.itemAdvertiseBinding.setOnButton(oitemClicked);
 
         }
 
-        public  void  setOnItemClicked(OnItemClickedListener1 onItemClickedListener1){
+        public  void  setOnItemClicked(OnItemClickListener onItemClickedListener1){
 
-            this.itemAdvertiseBinding.setOnItemClickListener(onItemClickedListener1);
+            this.itemAdvertiseBinding.setOnItemClicked(onItemClickedListener1);
         }
     }
 

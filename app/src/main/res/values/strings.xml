@@ -19,6 +19,9 @@
     <string name="accept">Accept</string>
     <string name="waiting">Waiting</string>
     <string name="finish">Finish</string>
+    <string name="day">day</string>
+    <string name="minutes">Minutes</string>
+    <string name="hours">Hour</string>
 
 
 </resources>

@@ -8,8 +8,12 @@ public class WaitingModuleAdapter {
     private  String minute;
     private  String description;
     private  String  title;
+    private  String flsgImage;
+    private  int flageColor;
 
-    public WaitingModuleAdapter(String textDateFrom, String textDateTo, String day, String hour, String minute, String description, String title) {
+    public WaitingModuleAdapter(String textDateFrom, String textDateTo,
+                                String day, String hour, String minute, String description,
+                                String title, String flsgImage,int flageColor) {
         this.textDateFrom = textDateFrom;
         this.textDateTo = textDateTo;
         this.day = day;
@@ -17,6 +21,16 @@ public class WaitingModuleAdapter {
         this.minute = minute;
         this.description = description;
         this.title = title;
+        this.flsgImage = flsgImage;
+        this.flageColor=flageColor;
+    }
+
+    public int getFlageColor() {
+        return flageColor;
+    }
+
+    public void setFlageColor(int flageColor) {
+        this.flageColor = flageColor;
     }
 
     public String getTextDateFrom() {

@@ -11,4 +11,15 @@
         android:name="com.ismart.samahncrm.crmhome.fragments.CrmHomeFragment"
         android:label="crm_fragment"
         tools:layout="@layout/crm_fragment" />
+
+    <navigation android:id="@+id/sendMoneyGraph" app:startDestination="@id/chooseRecipient">
+        <fragment
+            android:id="@+id/chooseRecipient"
+            android:name="com.ismart.samahncrm.crmhome.fragments.WaitingFragment"
+            android:label="fragment_choose_recipient"
+            tools:layout="@layout/wait_fragment">
+
+        </fragment>
+
+    </navigation>
 </navigation>

@@ -2,9 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/crm_navigation"
-    app:startDestination="@id/crmHomeFragment"
+    android:id="@+id/crm_navigation1"
+    app:startDestination="@id/waitingFragment"
     >
 
 
+    <fragment
+        android:id="@+id/waitingFragment"
+        android:name="com.ismart.samahncrm.crmhome.fragments.WaitingFragment"
+        android:label="wait_fragment"
+        tools:layout="@layout/wait_fragment" />
 </navigation>
